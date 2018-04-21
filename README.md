@@ -1,16 +1,16 @@
-# 高级爬虫库requests_htmls #
+# 高级爬虫库[requests_htmls](https://github.com/msterzhang/requests_htmls)#
 
 ![](http://p16.qhimg.com/t016924b01742e3063a.jpg)
 
 # 介绍： #
 
-##  该库是我对常用的爬虫库进行封装，产生的高级库，旨在尽可能简单直观地解析HTML。当使用这个库时，你会自动获得: 
+##  该库是我对常用的爬虫库进行封装，产生的高级库，旨在尽可能简单直观地解析HTML，欢迎大家Fork。当使用这个库时，你会自动获得: 
 
 * 集请求与解析于一个库。
 * 完全支持javascript,能够获取javascript加载后的HTML。
 * 适合小白，代码简单，更容易的上手,轻松爬取图片，链接。
 
-## 安装依赖库： ##
+## 安装依赖库，可直接双击运行install.bat文件进行安装： ##
     pip install requests
 	pip install beautifulsoup
 	pip install selenium
@@ -18,7 +18,7 @@
 
 ## 此库的安装： ##
 
-* 下载requests_htmls.py文件，放在python安装目录：D:\python\Lib\site-packages中，site-packages文件夹里，别搞错了，便可以直接导入使用。
+* `git clone https://github.com/msterzhang/requests_htmls `,得到requests_htmls.py文件，放在python安装目录：D:\python\Lib\site-packages中，site-packages文件夹里，别搞错了，便可以直接导入使用。
 # 使用教程： #
 
 > 这里使用我的博客做教程，因为我的博客里的有一部分内容是通过javascript加载的，域名还没审批下来。
