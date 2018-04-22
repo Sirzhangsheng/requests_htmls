@@ -47,7 +47,7 @@ def find(html, a, class_):
 
 # 获取网站所以url
 def find_all_links(html):
-    if '<html>' in html:
+    if '</html>' in html:
         soup = BeautifulSoup(html, 'html5lib')
         find_links = soup.find_all('a')
         link_list = []
