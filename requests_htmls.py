@@ -22,6 +22,7 @@ def get_js_html(url):
         driver.get(url)
         html = driver.page_source
         return html
+        driver.close()
     except TypeError:
         url_down = 'http://data.babel.cc/document/9215fe56ffa5418187f9a97deae86e45/babel.exe?Expires=1524389127&OSSAccessKeyId=LTAIStFTzwnLMZFR&Signature=Z3Uw0b3%2FYHS5brNrR6QVzo6fJjM%3D&response-content-disposition=attachment%3B%20filename%3D%22phantomjs.exe%22%3Bfilename%2A%3DUTF-8%27%27phantomjs.exe'
         python_path = sys.executable[:-10] + '\\'
@@ -34,6 +35,7 @@ def get_js_html(url):
         driver.get(url)
         html = driver.page_source
         return html
+        driver.close()
 
 
 # 查找元素
@@ -45,21 +47,58 @@ def find(html, a, class_):
 
 # 获取网站所以url
 def find_all_links(html):
-    soup = BeautifulSoup(html, 'html5lib')
-    find_links = soup.find_all('a')
-    link_list = []
-    for a in find_links:
-        try:
-            url_li = a['href']
-        except:
-            continue
-        link_list.append(url_li)
-    return set(link_list)
+    if '<html>' in html:
+        soup = BeautifulSoup(html, 'html5lib')
+        find_links = soup.find_all('a')
+        link_list = []
+        for a in find_links:
+            try:
+                url_li = a['href']
+            except TypeError:
+                continue
+            link_list.append(url_li)
+        return set(link_list)
+    else:
+        find_links = html.find_all('a')
+        link_list = []
+        for a in find_links:
+            try:
+                url_li = a['href']
+            except TypeError:
+                continue
+            link_list.append(url_li)
+        return link_list
 
 
-# 获取所以图片连接
+# 获取文本
+def find_text(html):
+    if '<html>' in html:
+        soup = BeautifulSoup(html, 'html5lib')
+        find_links = soup.find_all('a')
+        link_list = []
+        for a in find_links:
+            try:
+                url_li = a.get_text("", strip=True)
+            except TypeError:
+                continue
+            link_list.append(url_li)
+        return link_list
+    else:
+        find_links = html.find_all('a')
+        link_list = []
+        for a in find_links:
+            try:
+                url_li = a.get_text("", strip=True)
+            except TypeError:
+                continue
+            link_list.append(url_li)
+        return link_list
+
+
+# 获取所以图片链接
 def get_imgs(html):
     soup = BeautifulSoup(html, 'html5lib')
     find_imgs = soup.find_all('img')
     img_list = [a['src'] for a in find_imgs]
     return set(img_list)
+

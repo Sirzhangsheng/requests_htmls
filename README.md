@@ -18,14 +18,14 @@
 
 ## 此库的安装： ##
 
-* `git clone https://github.com/msterzhang/requests_htmls `,得到requests_htmls.py文件，放在python安装目录：D:\python\Lib\site-packages中，site-packages文件夹里，别搞错了，便可以直接导入使用。
+> `git clone https://github.com/msterzhang/requests_htmls `,得到requests_htmls.py文件，放在python安装目录：D:\python\Lib\site-packages中，site-packages文件夹里，别搞错了，便可以直接导入使用。
 # 使用教程： #
 
 > 这里使用我的博客做教程，因为我的博客里的有一部分内容是通过javascript加载的，域名还没审批下来。
 
 ## 一.获取html： ##
 
-### 注意看以下html的区别： ###
+### 注意看以下html的区别，标签的位置： ###
     
 
     <header>
@@ -46,7 +46,7 @@
 	url = 'http://39.108.216.131/program/'
 	html = get_html(url)
 	print(html)
-#### 得到： ####
+#### 运行结果： ####
     <header>
         <a class="label label-important" id='biao' href="">标签：2 <i
                 class="label-arrow"></i>
@@ -65,7 +65,7 @@
 	html = get_js_html(url)
 	print(html)
 
-#### 得到： ####
+#### 运行结果： ####
 	<header>
         <a class="label label-important" id="biao" href="">标签：django</a>
         <h2>
@@ -91,7 +91,7 @@
 	print(find)
 
 
-#### 得到： ####
+#### 运行结果： ####
     
     <div class="label">
             
@@ -135,6 +135,7 @@
             
         </div>
 
+    
 ### 2.获取网页所有链接： ###
     #!/usr/bin/env python
 	# -*- coding: utf-8 -*-
@@ -162,5 +163,52 @@
 	find = get_imgs(html)
 	print(find)
 
+
 #### 运行结果： ####
-    {'http://ws4.sinaimg.cn/mw600/006DuZvsgy1fqk2dopstkj30dw0ku75k.jpg', 'http://wx1.sinaimg.cn/mw600/6cca1403ly1fqk0r7re58j20gm0giabh.jpg', 'http://wx2.sinaimg.cn/mw600/e0e4ecc3gy1fqk2xtpwl7j20tt18gn6m.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk23yeay0j30v80ngx1c.jpg', 'http://wx3.sinaimg.cn/mw600/47850a75ly1fe4aumtjqfj20dw0kst9l.jpg', 'http://wx4.sinaimg.cn/mw600/cef04520ly1fqeocjlwpkj21wq2v31kz.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk23jtk7oj318g1v8u0z.jpg', 'http://wx4.sinaimg.cn/mw600/cef04520ly1fqeocpqeocj20rs15oteo.jpg', 'http://ww3.sinaimg.cn/mw600/006XNEY7gy1fqk1f0h6brj312011zwkc.jpg', 'http://wx1.sinaimg.cn/mw600/e0e4ecc3gy1fqk4j4735cj215o0ngak3.jpg', 'http://ww2.sinaimg.cn/mw600/47850a75jw1f46610ze0nj20qo0qoq73.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk1q23bgej30zk1bf79q.jpg', 'http://wx4.sinaimg.cn/mw600/e0e4ecc3gy1fqk2yhi9qwj20u00ybae2.jpg', 'http://wx4.sinaimg.cn/mw600/6cca1403ly1fqj8bgj8puj20p60ddwf0.jpg', 'http://wx4.sinaimg.cn/mw600/e0e4ecc3gy1fqk2ysk2mej20u0102q88.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk1hjvlb0j306y07jt96.jpg', 'http://wx3.sinaimg.cn/mw600/cef04520ly1fqeocnztj0j21qy2bckjl.jpg', 'http://ww3.sinaimg.cn/mw600/0073tLPGgy1fqk240ma5kj30v80ngx1c.jpg', 'http://ww3.sinaimg.cn/mw600/47850a75jw1f5w4rooqlnj20qo0qo458.jpg', 'http://ww3.sinaimg.cn/mw600/006XNEY7gy1fqk23vudz0j312w1x5u0z.jpg', 'http://ww3.sinaimg.cn/mw600/be421314jw1epob2clpz0j20dw0jeabl.jpg', 'http://ws1.sinaimg.cn/mw600/006EPd1dgy1fqk31of820j30g40o6dh9.jpg', '//cdn.jandan.net/static/sos/699pic/5.png', 'http://ws2.sinaimg.cn/mw600/00671KYngy1fqk2b3mvi4j316o1kw4dt.jpg', 'http://ww3.sinaimg.cn/mw600/0073tLPGgy1fqk1opww38j30hs0hs0ue.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk1elvrt3j30un0uogpd.jpg', 'http://wx2.sinaimg.cn/mw600/cef04520ly1fqeoconabhj20pu0z4481.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk1pplkbgj30ku0ku770.jpg'}
+    {'http://ws4.sinaimg.cn/mw600/006DuZvsgy1fqk2dopstkj30dw0ku75k.jpg', 'http://wx1.sinaimg.cn/mw600/6cca1403ly1fqk0r7re58j20gm0giabh.jpg', 'http://wx2.sinaimg.cn/mw600/e0e4ecc3gy1fqk2xtpwl7j20tt18gn6m.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk23yeay0j30v80ngx1c.jpg', 'http://wx3.sinaimg.cn/mw600/47850a75ly1fe4aumtjqfj20dw0kst9l.jpg', 'http://wx4.sinaimg.cn/mw600/cef04520ly1fqeocjlwpkj21wq2v31kz.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk23jtk7oj318g1v8u0z.jpg', 'http://wx4.sinaimg.cn/mw600/cef04520ly1fqeocpqeocj20rs15oteo.jpg', 'http://ww3.sinaimg.cn/mw600/006XNEY7gy1fqk1f0h6brj312011zwkc.jpg', 'http://wx1.sinaimg.cn/mw600/e0e4ecc3gy1fqk4j4735cj215o0ngak3.jpg', 'http://ww2.sinaimg.cn/mw600/47850a75jw1f46610ze0nj20qo0qoq73.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk1q23bgej30zk1bf79q.jpg', 'http://wx4.sinaimg.cn/mw600/e0e4ecc3gy1fqk2yhi9qwj20u00ybae2.jpg', 'http://wx4.sinaimg.cn/mw600/6cca1403ly1fqj8bgj8puj20p60ddwf0.jpg', 'http://wx4.sinaimg.cn/mw600/e0e4ecc3gy1fqk2ysk2mej20u0102q88.jpg', 'http://ww3.sinaimg.cn/mw600/0073ob6Pgy1fqk1hjvlb0j306y07jt96.jpg', 'http://wx3.sinaimg.cn/mw600/cef04520ly1fqeocnztj0j21qy2bckjl.jpg', 'http://ww3.sinaimg.cn/mw600/0073tLPGgy1fqk240ma5kj30v80ngx1c.jpg', 'http://ww3.sinaimg.cn/mw600/47850a75jw1f5w4rooqlnj20qo0qo458.jpg', 'http://ww3.sinaimg.cn/mw600/006XNEY7gy1fqk23vudz0j312w1x5u0z.jpg', 'http://ww3.sinaimg.cn/mw600/be421314jw1epob2clpz0j20dw0jeabl.jpg', 'http://ws1.sinaimg.cn/mw600/006EPd1dgy1fqk31of820j30g40o6dh9.jpg'}
+
+### 4.获取文本 ###
+    #!/usr/bin/env python
+	# -*- coding: utf-8 -*-
+	from requests_htmls import get_html
+	from requests_htmls import find_all_links
+	from requests_htmls import find,find_text
+	
+	
+	def get_url(i):
+	    if i == 0:
+	        return 'http://www.gzgov.gov.cn/xwdt/gzyw/index.html'
+	    else:
+	        return 'http://www.gzgov.gov.cn/xwdt/gzyw/index_{}.html'.format(i)
+	
+	
+	def get_find(url):
+	    html = get_html(url)
+	    html2 = find(html,'div',class_='right-list-box')
+	    text_list = find_text(html2)
+	    url_list = find_all_links(html2)
+	    for a,b in zip(text_list,url_list):
+	        print(a,b)
+	
+	
+	if __name__ == '__main__':
+	    for i in range(1):
+	        url = get_url(i)
+	        get_find(url)
+
+#### 运行结果： ####
+    贵州水利改革发展迎来“开门红” 一季度落实水利投资近180亿元 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180422_1114760.html
+	31万人参加“省考” 最俏岗位招录比1725:1 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180422_1114759.html
+	一季度贵州消费增速位居全国第三 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180422_1114758.html
+	2018年贵州省考21日开考 平均招录比约为68:1 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180421_1114754.html
+	“一带一路”南向通道贵州段测试班列开通运行 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180421_1114753.html
+	贵州：对外经济技术合作一季度实现“开门红” http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180421_1114752.html
+	贵州磷化工行业刮起“绿色旋风” http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180421_1114751.html
+	共话新时代贵州教育改革发展圆桌会议举行 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180421_1114750.html
+	2017年贵州植被生态质量及改善均列全国第六 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180420_1114613.html
+	贵州省首款智能电动汽车在京亮相 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180420_1114614.html
+	贵州：大数据驱动社会治理升级 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180420_1114639.html
+	贵州教育云：让智慧教育变成教育的智慧 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180420_1114645.html
+	贵州省农委成立产业大招商工作专班 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180420_1114652.html
+	一季度贵州省贷款增速列全国第三位 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180420_1114690.html
+	贵阳义务教育学生 5月起可免费托管 http://www.gzgov.gov.cn/xwdt/gzyw/201804/t20180420_1114681.html
