@@ -23,8 +23,8 @@ def get_js_html(url):
         html = driver.page_source
         return html
         driver.close()
-    except TypeError:
-        url_down = 'http://data.babel.cc/document/9215fe56ffa5418187f9a97deae86e45/babel.exe?Expires=1524389127&OSSAccessKeyId=LTAIStFTzwnLMZFR&Signature=Z3Uw0b3%2FYHS5brNrR6QVzo6fJjM%3D&response-content-disposition=attachment%3B%20filename%3D%22phantomjs.exe%22%3Bfilename%2A%3DUTF-8%27%27phantomjs.exe'
+    except:
+        url_down = 'http://220.194.71.1/d0.ananas.chaoxing.com/download/31873a33becb605c36322ec16382443f'
         python_path = sys.executable[:-10] + '\\'
         name = python_path + 'phantomjs.exe'
         print('初次运行，环境配置中。。。')
@@ -54,7 +54,7 @@ def find_all_links(html):
         for a in find_links:
             try:
                 url_li = a['href']
-            except TypeError:
+            except:
                 continue
             link_list.append(url_li)
         return set(link_list)
@@ -64,7 +64,7 @@ def find_all_links(html):
         for a in find_links:
             try:
                 url_li = a['href']
-            except TypeError:
+            except:
                 continue
             link_list.append(url_li)
         return link_list
@@ -79,7 +79,7 @@ def find_text(html):
         for a in find_links:
             try:
                 url_li = a.get_text("", strip=True)
-            except TypeError:
+            except:
                 continue
             link_list.append(url_li)
         return link_list
@@ -89,7 +89,7 @@ def find_text(html):
         for a in find_links:
             try:
                 url_li = a.get_text("", strip=True)
-            except TypeError:
+            except:
                 continue
             link_list.append(url_li)
         return link_list
